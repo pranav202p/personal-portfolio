@@ -1,4 +1,4 @@
-/************ Custom Font ************/
+*********** Custom Font ***********
 @font-face {
 	font-family: Centra;
 	src: url('./assets/font/CentraNo2-Bold.ttf');
@@ -232,12 +232,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Banner Css ************/
 .banner {
-  margin-top: 0;
-  padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: relative; /* Ensure that the banner has a relative position */
+  z-index: 1; /* Ensure banner is below the skill section */
+  
 }
 .banner .tagline {
   font-weight: 700;
@@ -299,39 +296,72 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
 }
+.background-image-left {
+  position: absolute;
+  top: 28%;
+  left: 0;
+  width: 40%;
+  z-index: -1; /* Ensure it stays behind other content */
+}
+
+/* Banner.css */
+
+/* Customize the slider thumb hover effect */
+.rc-slider-handle:hover {
+  border-color: #333;
+}
+
+/* Customize the slider track when active */
+.rc-slider-track {
+  background-color: #555;
+}
 
 /************ Skills Css ************/
+
+
 .skill {
-  padding: 0 0 50px 0;
   position: relative;
+ 
+  z-index: 10; 
+  margin-top: 200px; 
+  margin-bottom: 200px; /* Adjust to overlap the banner */
+
 }
+
 .skill-bx {
   background: #151515;
-  border-radius: 64px;
+  border-radius: 124px;
+  border-color: #f4efef;
+  border-style: double;
   text-align: center;
   padding: 60px 50px;
-  margin-top: -60px;
+  margin-top: 30px;
 }
+
 .skill h2 {
-	font-size: 45px;
-	font-weight: 700;
+  font-size: 45px;
+  font-weight: 700;
 }
+
 .skill p {
-    color: #B8B8B8;
-    font-size: 18px;
-    letter-spacing: 0.8px;
-    line-height: 1.5em;
-    margin: 14px 0 75px 0;
+  color: #c13737;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px 0 75px 0;
 }
+
 .skill-slider {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 2px;
   position: relative;
 }
+
 .skill-slider .item img {
   width: 50%;
   margin: 0 auto 15px auto;
 }
+
 .background-image-left {
   top: 28%;
   position: absolute;
@@ -340,11 +370,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+
+
 /************ Projects Css ************/
 .project {
   padding: 80px 0;
   position: relative;
   background-color: black;
+  margin-bottom: 130px;
 }
 .project h2 {
 	font-size: 45px;
@@ -364,7 +397,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 72%;
   margin: 0 auto;
   border-radius: 50px;
-  background-color: rgb(255 255 255 / 10%);
+  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 .project .nav.nav-pills .nav-item {
@@ -421,12 +454,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .proj-imgbx::before {
   content: "";
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: linear-gradient(90.21deg, #231582 -5.91%, #4A2FBD 111.58%);
   opacity: 0.85;
   position: absolute;
   width: 100%;
   height: 0;
-  transition: 0.4s ease-in-out;
+  transition: 0.9s ease-in-out;
 }
 .proj-imgbx:hover::before {
   height: 100%;

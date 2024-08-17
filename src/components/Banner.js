@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../assets/img/developer.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import circuitBoardGif from '../assets/img/YESTERDAY.gif'; // Import your GIF file
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -47,10 +48,32 @@ export const Banner = () => {
     }
   }
 
+  const bannerStyle = {
+    position: 'relative',
+    overflow: 'hidden',
+    minHeight: '100vh', // Ensure the banner takes up at least the full viewport height
+    display: 'flex',
+    alignItems: 'center',
+  };
+
+  const backgroundStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundImage: `url(${circuitBoardGif})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    opacity: 0.7, // Adjust this value to change the overlay intensity
+    zIndex: -1,
+  };
+
   return (
-    <section className="banner" id="home">
+    <section className="banner" id="home" style={bannerStyle}>
+      <div style={backgroundStyle}></div>
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
@@ -58,7 +81,7 @@ export const Banner = () => {
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi! I'm Pranav`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer" ]'><span className="wrap">{text}</span></span></h1>
                   <p>Welcome to my web portfolio! I specialize in crafting responsive, visually appealing, and functional web applications. Dive into my projects to see what I can do, and feel free to reach out if you'd like to collaborate</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                  <button onClick={() => console.log('connect')}>Let's Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>
           </Col>

@@ -21,7 +21,7 @@ export const Projects = () => {
       imgUrl: projImg2,
     },
     {
-      title: "Android Blind Aid app",
+      title: "Student Connect",
       description: "Navigating the Blind",
       imgUrl: projImg3,
     },
