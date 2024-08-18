@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import contactImg from "../assets/img/contact-img.svg";
+import contactImg from "../assets/img/image.png";
 import 'animate.css';
+import navIcon1 from "../assets/img/nav-icon1.svg";
+import navIcon2 from "../assets/img/nav-icon2.svg";
+import navIcon3 from "../assets/img/nav-icon3.svg";
 import TrackVisibility from 'react-on-screen';
 
 export const Contact = () => {
@@ -48,7 +51,7 @@ export const Contact = () => {
       <Container>
         
         <Row className="align-items-center">
-          <Col size={12} md={6}>
+          <Col size={10} md={4}>
             <TrackVisibility>
               {({ isVisible }) =>
                 <img className={isVisible ? "animate__animated animate__zoomIn" : ""} src={contactImg} alt="Contact Us"/>
@@ -86,11 +89,13 @@ export const Contact = () => {
                     }
                   </Row>
                 </form>
+                {/* <h1>All Rights Reserved @2024</h1> */}
               </div>}
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
+     
     </section>
   )
 }

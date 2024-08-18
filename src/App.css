@@ -31,7 +31,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #121212 !important;
+  background-color: #000 !important;
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
@@ -55,7 +55,7 @@ a:hover {
 
 img {
   width: 100%;
-  height: auto;
+  height: 60%;
 }
 
 button {
@@ -88,7 +88,7 @@ nav.navbar {
   width: 100%;
   top: 0;
   z-index: 9999;
-  transition:  0.32s ease-in-out;
+  transition:  0.5s ease-in-out;
 }
 nav.navbar.scrolled {
   padding: 0px 0;
@@ -321,7 +321,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .skill {
   position: relative;
- 
+  background-color: #000;
+
   z-index: 10; 
   margin-top: 200px; 
   margin-bottom: 200px; /* Adjust to overlap the banner */
@@ -377,7 +378,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 80px 0;
   position: relative;
   background-color: black;
-  margin-bottom: 130px;
+  margin-bottom: 140px;
 }
 .project h2 {
 	font-size: 45px;
@@ -395,6 +396,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .project .nav.nav-pills {
   width: 72%;
+  
   margin: 0 auto;
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -451,6 +453,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 24px;
+  min-height: 300px;
+}
+.img-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the full height without distortion */
 }
 .proj-imgbx::before {
   content: "";
@@ -501,7 +515,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Projects Css ************/
 .contact {
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  background: linear-gradient(90.21deg, #312f30 -5.91%, #13035c 111.58%);
   padding: 60px 0 200px 0;
 }
 .contact img {
@@ -699,4 +713,126 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .timeline-content p {
   margin: 0;
+}
+
+/************ Education timeline ************/
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 40px 0;
+  min-height: 100vh;
+  padding-top: 25px;
+  border-top-style:double;
+}
+
+.timeline-container::after {
+  background-color: #e17b77;
+  content: '';
+  position: absolute;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 100%;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+  position: relative;
+  margin: 10px 0;
+  width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+  align-self: flex-end;
+  justify-content: flex-start;
+  padding-left: 30px;
+  padding-right: 0;
+}
+
+.timeline-item-content {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #0c0c0c;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px;
+  position: relative;
+  width: 400px;
+  max-width: 70%;
+  text-align: right;
+}
+
+.timeline-item-content::after {
+  content: ' ';
+  background-color: #fff;
+  box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: -7.5px;
+  top: calc(50% - 7.5px);
+  transform: rotate(45deg);
+  width: 15px;
+  height: 15px;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content::after {
+  right: auto;
+  left: -7.5px;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item-content .date {
+  color: #f9f5f5;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.timeline-item-content p {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 15px 0;
+  max-width: 250px;
+}
+
+.timeline-item-content .circle {
+  background-color: #fff;
+  border: 3px solid #e17b77;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: -40px;
+  width: 20px;
+  height: 20px;
+  z-index: 100;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content .circle {
+  right: auto;
+  left: -40px;
+}
+
+.timeline-item-content .circle::before {
+  content: '\f19d'; /* Unicode for graduation cap icon */
+  font-family: 'FontAwesome';
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timeline-item-content .circle.book::before {
+  content: '\f02d'; /* Unicode for book icon */
+}
+
+.timeline-item-content .circle.school::before {
+  content: '\f549'; /* Unicode for school icon */
 }

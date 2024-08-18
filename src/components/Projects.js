@@ -1,8 +1,8 @@
-import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import { Container, Row, Col, Tab } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import projImg1 from "../assets/img/proj-image-1.png";
+import projImg2 from "../assets/img/proj-image-2.png";
+import projImg3 from "../assets/img/project-img2.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -12,20 +12,22 @@ export const Projects = () => {
   const projects = [
     {
       title: "Unishare",
-      description: "Collabrate and share",
-      imgUrl: projImg1,
+      description: "Collaborate and share",
+      imgUrl: projImg2,
+      link: "https://unishare-ten.vercel.app"
     },
     {
       title: "Intervo",
-      description: "Simply Hiring ,Amplify Talent",
-      imgUrl: projImg2,
+      description: "Simply Hiring, Amplify Talent",
+      imgUrl: projImg3,
+      link: "https://intervo.example.com"
     },
     {
       title: "Student Connect",
-      description: "Navigating the Blind",
-      imgUrl: projImg3,
+      description: "Find Your Peers, Share Your Passion",
+      imgUrl: projImg1,
+      link: "https://unishare-q3pz.vercel.app/"
     },
-    
   ];
 
   return (
@@ -49,7 +51,7 @@ export const Projects = () => {
                               <ProjectCard
                                 key={index}
                                 {...project}
-                                />
+                              />
                             )
                           })
                         }

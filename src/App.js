@@ -7,6 +7,7 @@ import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import EducationTimeline from './components/EducationTimeline';
 
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
       <Banner />
       <Skills />
       <Projects />
+      <EducationTimeline/>
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
