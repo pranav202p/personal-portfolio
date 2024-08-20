@@ -62,7 +62,7 @@ export const Banner = () => {
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundImage: `url(${circuitBoardGif})`,
+    // backgroundImage: `url(${circuitBoardGif})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     opacity: 0.7, // Adjust this value to change the overlay intensity
